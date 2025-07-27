@@ -1,5 +1,5 @@
 'use client';
-import React from 'react'
+import React,{Suspense} from 'react'
 import Link from 'next/link'
 import {useState} from 'react'
 import Play from '../components/Player';
@@ -57,7 +57,7 @@ const Game = () => {
         <Play player={choice}/>
         <Computer player={number}/>
       </div>
-      <Link href={{pathname:'/score',query:{wins,losses,ties}}} className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition">Get Result</Link>
+      <Link href={{pathname:'/score',query:{wins,losses,ties}}} className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition">Get Result</Link>            
     </div>
   )
 }

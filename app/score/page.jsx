@@ -3,7 +3,7 @@ import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
-const Score = () => {
+const Scorecontent = () => {
   const params = useSearchParams()
   const wins = params.get("wins")
   const losses = params.get("losses")
@@ -26,5 +26,10 @@ const Score = () => {
     </div>
   )
 }
-
-export default Score
+export default function Score(){
+  return(
+    <React.Suspense fallback={<div className="text-center p-6">Loading...</div>}>
+      <Scorecontent/>
+    </React.Suspense>
+  )
+}
